@@ -35,19 +35,27 @@ public class managerMenus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        #region setup menus
         optionsMenus.SetActive(false);
         leaderBoardMenus.SetActive(false);
         levelMenus.SetActive(false);
+        #endregion
+
+        #region setup button menus principal
         buttonQuit.onClick.AddListener(quit);
         buttonOptions.onClick.AddListener(options);
-        buttonRetourOptions.onClick.AddListener(retourOptions);
-        buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
         buttonLeaderBoard.onClick.AddListener(leaderBoards);
         buttonLevel.onClick.AddListener(startGame);
+        #endregion
+
+        buttonRetourOptions.onClick.AddListener(retourOptions);
+
+        buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
+        
         buttonRetourLevel.onClick.AddListener(retourLevel);
     }
 
-    #region main menus
+    #region main menus fonction
     private void startGame()
     {
         levelMenus.SetActive(true);
@@ -71,7 +79,7 @@ public class managerMenus : MonoBehaviour
     }
     #endregion
 
-    #region options
+    #region options fonction
     private void retourOptions()
     {
         optionsMenus.SetActive(false);
@@ -79,7 +87,7 @@ public class managerMenus : MonoBehaviour
     }
     #endregion
 
-    #region leaderBoard
+    #region leaderBoard fonction
     private void retourLeaderBoard()
     {
         leaderBoardMenus.SetActive(false);
@@ -87,7 +95,7 @@ public class managerMenus : MonoBehaviour
     }
     #endregion
 
-    #region level
+    #region level fonction
     private void retourLevel()
     {
         levelMenus.SetActive(false);
