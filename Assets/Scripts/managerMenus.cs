@@ -67,6 +67,7 @@ public class managerMenus : MonoBehaviour
         buttonHard.onClick.AddListener(delegate { loadLevel(Difficulte.hard); });
         buttonRetourLevel.onClick.AddListener(retourLevel);
         #endregion
+
     }
 
     #region main menus fonction
@@ -129,15 +130,12 @@ public class managerMenus : MonoBehaviour
         {
             case Difficulte.easy:
                 Debug.Log("load easy");
-                levelMenus.SetActive(false);
                 break;
             case Difficulte.medium:
                 Debug.Log("load medium");
-                levelMenus.SetActive(false);
                 break;
             case Difficulte.hard:
                 Debug.Log("load hard");
-                levelMenus.SetActive(false);
                 break;
         }
     }
