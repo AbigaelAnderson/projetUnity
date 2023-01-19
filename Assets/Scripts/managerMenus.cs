@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class managerMenus : MonoBehaviour
@@ -25,6 +26,7 @@ public class managerMenus : MonoBehaviour
     public Button buttonRetourOptions;
     public Slider sliderSon;
     public TextMeshProUGUI valeurSon;
+    public AudioSource audioSource;
     #endregion
 
     #region leaderBoard
@@ -33,6 +35,9 @@ public class managerMenus : MonoBehaviour
 
     #region level
     public Button buttonRetourLevel;
+    public Button buttonFacile;
+    public Button buttonMedium;
+    public Button buttonHard;
     #endregion
     #endregion
     // Start is called before the first frame update
@@ -55,8 +60,13 @@ public class managerMenus : MonoBehaviour
         buttonRetourOptions.onClick.AddListener(retourOptions);
 
         buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
-        
+
+        #region level select
+        buttonFacile.onClick.AddListener(delegate { loadLevel(Difficulte.easy); });
+        buttonMedium.onClick.AddListener(delegate { loadLevel(Difficulte.medium); });
+        buttonHard.onClick.AddListener(delegate { loadLevel(Difficulte.hard); });
         buttonRetourLevel.onClick.AddListener(retourLevel);
+        #endregion
     }
 
     #region main menus fonction
@@ -94,6 +104,7 @@ public class managerMenus : MonoBehaviour
     {
         Debug.Log(sliderSon.value);
         valeurSon.text = sliderSon.value.ToString();
+        audioSource.volume = sliderSon.value / 100;
     }
     #endregion
 
@@ -110,6 +121,22 @@ public class managerMenus : MonoBehaviour
     {
         levelMenus.SetActive(false);
         mainMenus.SetActive(true);
+    }
+
+    private void loadLevel(Difficulte newDiffculte)
+    {
+        switch(newDiffculte)
+        {
+            case Difficulte.easy:
+                Debug.Log("load easy");
+                break;
+            case Difficulte.medium:
+                Debug.Log("load medium");
+                break;
+            case Difficulte.hard:
+                Debug.Log("load hard");
+                break;
+        }
     }
     #endregion
 
