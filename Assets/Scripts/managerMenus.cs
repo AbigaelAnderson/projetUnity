@@ -129,6 +129,7 @@ public class managerMenus : MonoBehaviour
         {
             case Difficulte.easy:
                 Debug.Log("load easy");
+                SceneManager.LoadScene("SceneNiveauFacile");
                 break;
             case Difficulte.medium:
                 Debug.Log("load medium");
