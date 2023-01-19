@@ -6,7 +6,6 @@ public class RemoveCar : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("test");
         if (collision.gameObject.name == "Car(Clone)")
         {
             collision.gameObject.SetActive(false);

@@ -18,7 +18,7 @@ public class Spawn : MonoBehaviour
     {
         var instance = Instantiate(car, transform.position, Quaternion.identity);
         var scriptMove = instance.AddComponent<Move>();
-        scriptMove.speed = 0.4f;
+        scriptMove.speed = speed;
     }
 
     // Update is called once per frame
