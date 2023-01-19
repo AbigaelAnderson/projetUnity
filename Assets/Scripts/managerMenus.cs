@@ -67,7 +67,6 @@ public class managerMenus : MonoBehaviour
         buttonHard.onClick.AddListener(delegate { loadLevel(Difficulte.hard); });
         buttonRetourLevel.onClick.AddListener(retourLevel);
         #endregion
-
     }
 
     #region main menus fonction

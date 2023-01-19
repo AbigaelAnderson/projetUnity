@@ -6,12 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector3 currentMovement;
 
+    private bool movementInputDisabled;
+
     private const float moveIncrement = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        movementInputDisabled = false;
     }
 
     // Update is called once per frame
@@ -25,16 +27,21 @@ public class PlayerMovement : MonoBehaviour
         bool move = false;
         if (currentMovement == Vector3.zero)
         {
-            move = CheckInput();
-        } else
+            if (!movementInputDisabled)
+            {
+                move = CheckInput();
+            }
+        }
+        else
         {
             move = true;
         }
-        Debug.Log(move);
+        // Debug.Log(move);
         if (move)
         {
             MovePlayer();
-        } else
+        }
+        else
         {
             RoundPosition();
         }
@@ -71,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        Debug.Log(currentMovement);
+        // Debug.Log(currentMovement);
         Vector3 currentPos = transform.localPosition;
 
         // do a little jump!
@@ -125,5 +132,15 @@ public class PlayerMovement : MonoBehaviour
         currentPos.x = Mathf.Round(currentPos.x);
         currentPos.z = Mathf.Round(currentPos.z);
         transform.localPosition = currentPos;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.collider.CompareTag("Ground"))
+        {
+            Debug.Log("COLLISION!");
+            // we hit something
+            movementInputDisabled = true;
+        } 
     }
 }
