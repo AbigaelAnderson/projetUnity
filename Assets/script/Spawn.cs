@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
@@ -16,9 +14,13 @@ public class Spawn : MonoBehaviour
 
     void spawn()
     {
-        var instance = Instantiate(car, transform.position, Quaternion.identity);
-        var scriptMove = instance.AddComponent<Move>();
-        scriptMove.speed = 0.4f;
+        if(!pauseMenus.Pause)
+        {
+            var instance = Instantiate(car, transform.position, Quaternion.identity);
+            var scriptMove = instance.GetComponent<Rigidbody>();
+            var scriptMove2 = instance.AddComponent<move1>();
+            scriptMove2.speed = speed;
+        }
     }
 
     // Update is called once per frame
