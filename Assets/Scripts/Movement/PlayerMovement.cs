@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         bool move = false;
         if (currentMovement == Vector3.zero)
         {
-            if (!movementInputDisabled)
+            if (!movementInputDisabled && !pauseMenus.Pause)
             {
                 move = CheckInput();
             }

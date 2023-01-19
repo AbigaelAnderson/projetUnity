@@ -13,6 +13,9 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime * 10, 0, 0);
+        if(!pauseMenus.Pause)
+        {
+            transform.Translate(speed * Time.deltaTime * 10, 0, 0);
+        }
     }
 }

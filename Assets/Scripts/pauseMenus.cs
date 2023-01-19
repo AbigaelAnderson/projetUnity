@@ -9,6 +9,7 @@ public class pauseMenus : MonoBehaviour
     public Button buttonExitGame;
     public Button buttonContinue;
     public GameObject menusPause;
+    public static bool Pause;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,8 @@ public class pauseMenus : MonoBehaviour
 
     private void fonctionContinue()
     {
-        Debug.Log("continue");
         menusPause.SetActive(false);
+        pauseMenus.Pause = false;
     }
     private void exitGame()
     {
@@ -33,8 +34,8 @@ public class pauseMenus : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Escape))
         {
-            Debug.Log("test");
             menusPause.SetActive(true);
+            pauseMenus.Pause = true;
         }
     }
 }
