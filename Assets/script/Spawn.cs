@@ -15,8 +15,8 @@ public class Spawn : MonoBehaviour
     void spawn()
     {
         var instance = Instantiate(car, transform.position, Quaternion.identity);
-        var scriptMove = instance.AddComponent<Move>();
-        scriptMove.speed = speed;
+        var scriptMove = instance.GetComponent<Rigidbody>();
+        scriptMove.velocity = new Vector3(speed * 10, 0, 0);
     }
 
     // Update is called once per frame
