@@ -25,6 +25,7 @@ public class managerMenus : MonoBehaviour
     public Button buttonRetourOptions;
     public Slider sliderSon;
     public TextMeshProUGUI valeurSon;
+    public AudioSource audioSource;
     #endregion
 
     #region leaderBoard
@@ -94,6 +95,7 @@ public class managerMenus : MonoBehaviour
     {
         Debug.Log(sliderSon.value);
         valeurSon.text = sliderSon.value.ToString();
+        audioSource.volume = sliderSon.value / 100;
     }
     #endregion
 
