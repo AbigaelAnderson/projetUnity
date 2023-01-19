@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class managerMenus : MonoBehaviour
@@ -34,6 +35,9 @@ public class managerMenus : MonoBehaviour
 
     #region level
     public Button buttonRetourLevel;
+    public Button buttonFacile;
+    public Button buttonMedium;
+    public Button buttonHard;
     #endregion
     #endregion
     // Start is called before the first frame update
@@ -56,8 +60,13 @@ public class managerMenus : MonoBehaviour
         buttonRetourOptions.onClick.AddListener(retourOptions);
 
         buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
-        
+
+        #region level select
+        buttonFacile.onClick.AddListener(delegate { loadLevel(Difficulte.easy); });
+        buttonMedium.onClick.AddListener(delegate { loadLevel(Difficulte.medium); });
+        buttonHard.onClick.AddListener(delegate { loadLevel(Difficulte.hard); });
         buttonRetourLevel.onClick.AddListener(retourLevel);
+        #endregion
     }
 
     #region main menus fonction
@@ -112,6 +121,25 @@ public class managerMenus : MonoBehaviour
     {
         levelMenus.SetActive(false);
         mainMenus.SetActive(true);
+    }
+
+    private void loadLevel(Difficulte newDiffculte)
+    {
+        switch(newDiffculte)
+        {
+            case Difficulte.easy:
+                Debug.Log("load easy");
+                levelMenus.SetActive(false);
+                break;
+            case Difficulte.medium:
+                Debug.Log("load medium");
+                levelMenus.SetActive(false);
+                break;
+            case Difficulte.hard:
+                Debug.Log("load hard");
+                levelMenus.SetActive(false);
+                break;
+        }
     }
     #endregion
 

@@ -1393,6 +1393,9 @@ MonoBehaviour:
   audioSource: {fileID: 1419775286}
   buttonLeaderBoardBack: {fileID: 1401385575}
   buttonRetourLevel: {fileID: 1584183753}
+  buttonFacile: {fileID: 82859059}
+  buttonMedium: {fileID: 371686293}
+  buttonHard: {fileID: 1364817100}
 --- !u!4 &656258325
 Transform:
   m_ObjectHideFlags: 0
