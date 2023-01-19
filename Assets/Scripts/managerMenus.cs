@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,8 @@ public class managerMenus : MonoBehaviour
 
     #region options
     public Button buttonRetourOptions;
+    public Slider sliderSon;
+    public TextMeshProUGUI valeurSon;
     #endregion
 
     #region leaderBoard
@@ -48,6 +51,7 @@ public class managerMenus : MonoBehaviour
         buttonLevel.onClick.AddListener(startGame);
         #endregion
 
+        sliderSon.onValueChanged.AddListener(delegate { son(); });
         buttonRetourOptions.onClick.AddListener(retourOptions);
 
         buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
@@ -84,6 +88,12 @@ public class managerMenus : MonoBehaviour
     {
         optionsMenus.SetActive(false);
         mainMenus.SetActive(true);
+    }
+
+    private void son()
+    {
+        Debug.Log(sliderSon.value);
+        valeurSon.text = sliderSon.value.ToString();
     }
     #endregion
 
