@@ -12,14 +12,12 @@ public class MurDeFeu : MonoBehaviour
     private int positionZArrivee;
 
     Vector3 moveVector;
-    [SerializeField]
-    float vitesseDeplacement;
+    public float vitesseDeplacement;
 
     // Start is called before the first frame update
     void Start()
     {
-        positionZArrivee = 0;
-        vitesseDeplacement = 0.01f;
+        positionZArrivee = 50;
         moveVector = Vector3.forward;
     }
 
