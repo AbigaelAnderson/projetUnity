@@ -25,12 +25,20 @@ public class ScoresUtil : MonoBehaviour
         Debug.Log("Saved " + jsonSave);
     }
     
-    public static List<Score> getScore(string path)
+    public static List<Score> getScore()
     {
         string jsonGet = File.ReadAllText(path);
 
         Scores scores = JsonUtility.FromJson<Scores>(jsonGet);
 
         return scores.list;
+    }
+    
+    public static void reset()
+    {
+        string jsonSave = JsonUtility.ToJson(new Scores());
+
+        File.WriteAllText(path, jsonSave);
+        Debug.Log("Saved " + jsonSave);
     }
 }
