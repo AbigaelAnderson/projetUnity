@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CompterLesPoints : MonoBehaviour
 {
-    [SerializeField]
     private float scorePartie;
+    public static float bonus;
     private string scoreaAfficher;
     private float positionMaxAtteinte;
 
@@ -17,6 +17,7 @@ public class CompterLesPoints : MonoBehaviour
     void Start()
     {
         scorePartie = 0;
+        bonus = 0;
         positionMaxAtteinte = 0;
     }
 
@@ -32,7 +33,7 @@ public class CompterLesPoints : MonoBehaviour
 
     public void actualiserScore()
     {
-        scorePartie = positionMaxAtteinte * 100;
+        scorePartie = positionMaxAtteinte * 100 + bonus;
 
         scoreaAfficher = Mathf.RoundToInt(scorePartie).ToString();
 

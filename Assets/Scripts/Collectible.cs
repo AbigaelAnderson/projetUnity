@@ -44,15 +44,8 @@ public class Collectible : MonoBehaviour
             Debug.Log("Objet collecté");
 
             Destroy(this.gameObject);
-            
-            if( /*vie < 2*/true)
-            {
-                //vie += 1;
-            }
-            else
-            {
-                //score += 100;
-            }
+
+            CompterLesPoints.bonus += 1000;
         }
     }
 
