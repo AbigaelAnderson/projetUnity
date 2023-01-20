@@ -27,6 +27,7 @@ public class pauseMenus : MonoBehaviour
     }
     private void exitGame()
     {
+        pauseMenus.Pause = true;
         SceneManager.LoadScene("menus");
     }
 
