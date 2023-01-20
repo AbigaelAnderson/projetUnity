@@ -32,6 +32,8 @@ public class managerMenus : MonoBehaviour
 
     #region leaderBoard
     public Button buttonLeaderBoardBack;
+    public TextMeshProUGUI textLeaderBoardScore;
+    public Button textLeaderBoardReset;
     #endregion
 
     #region level
@@ -61,6 +63,7 @@ public class managerMenus : MonoBehaviour
         buttonRetourOptions.onClick.AddListener(retourOptions);
 
         buttonLeaderBoardBack.onClick.AddListener(retourLeaderBoard);
+        textLeaderBoardReset.onClick.AddListener(resetLeaderBoard);
 
         #region level select
         buttonFacile.onClick.AddListener(delegate { loadLevel(Difficulte.easy); });
@@ -81,7 +84,23 @@ public class managerMenus : MonoBehaviour
     {
         leaderBoardMenus.SetActive(true);
         mainMenus.SetActive(false);
+        
+        ScoresUtil.addScore(new Score("Wykaz", 6000));
+
+        updateLeaderBoards();
     }
+    
+    private void updateLeaderBoards()
+    {
+        List<Score> scores = ScoresUtil.getScore();
+        textLeaderBoardScore.text = "";
+        
+        for (int i = 0; i < Mathf.Min(5, scores.Count) ; i++)
+        {
+            textLeaderBoardScore.text += scores[i].name + " : " + scores[i].score + "\n";
+        }
+    }
+    
     private void options()
     {
         optionsMenus.SetActive(true);
@@ -123,6 +142,12 @@ public class managerMenus : MonoBehaviour
     {
         leaderBoardMenus.SetActive(false);
         mainMenus.SetActive(true);
+    }
+    
+    private void resetLeaderBoard()
+    {
+        ScoresUtil.reset();
+        updateLeaderBoards();
     }
     #endregion
 
