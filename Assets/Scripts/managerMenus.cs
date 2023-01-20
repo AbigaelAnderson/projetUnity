@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -104,6 +105,16 @@ public class managerMenus : MonoBehaviour
     {
         valeurSon.text = sliderSon.value.ToString();
         audioSource.volume = sliderSon.value / 100;
+        try
+        {
+            SettingObject setting = new SettingObject((int)sliderSon.value);
+            string json = JsonUtility.ToJson(setting);
+            File.WriteAllText(Application.persistentDataPath + "\\setting.json", json);
+        }
+        catch (IOException e)
+        {
+            Debug.Log(e.ToString());
+        }
     }
     #endregion
 
