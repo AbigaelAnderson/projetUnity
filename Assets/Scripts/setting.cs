@@ -11,7 +11,9 @@ public class setting : MonoBehaviour
         Debug.Log(Application.persistentDataPath);
         try
         {
-            File.WriteAllText(Application.persistentDataPath + "\\setting.json","{\"setting:\"100}");
+            SettingObject setting = new SettingObject(100);
+            string json = JsonUtility.ToJson(setting);
+            File.WriteAllText(Application.persistentDataPath + "\\setting.json", json);
         }
         catch(IOException e)
         {
