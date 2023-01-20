@@ -4,9 +4,9 @@
 public class Score
 {
     public string name;
-    public int score;
+    public float score;
     
-    public Score(string name, int score)
+    public Score(string name, float score)
     {
         this.name = name;
         this.score = score;

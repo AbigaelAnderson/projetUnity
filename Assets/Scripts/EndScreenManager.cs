@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class EndScreenManager : MonoBehaviour
 {
     public Button backToMenu;
+
+    public TextMeshProUGUI textPseudo;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,12 @@ public class EndScreenManager : MonoBehaviour
     void returnToMenu()
     {
         // TODO : Save score
+        string pseudo = textPseudo.text;
+        if (pseudo == "")
+        {
+            pseudo = "Anonymous";
+        }
+        ScoresUtil.addScore(new Score(pseudo, CompterLesPoints.scorePartie));
         SceneManager.LoadScene("menus");
     }
 }

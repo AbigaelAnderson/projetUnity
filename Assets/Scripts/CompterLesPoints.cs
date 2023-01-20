@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class CompterLesPoints : MonoBehaviour
 {
-    private float scorePartie;
+    public static float scorePartie;
     public static float bonus;
     private string scoreaAfficher;
     private float positionMaxAtteinte;
 
-    public TextMeshProUGUI scoreAffiché;
+    public TextMeshProUGUI scoreAffiche;
     public TextMeshProUGUI scoreFin;
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class CompterLesPoints : MonoBehaviour
 
         scoreaAfficher = Mathf.RoundToInt(scorePartie).ToString();
 
-        scoreAffiché.SetText("Score: " + scoreaAfficher);
+        scoreAffiche.SetText("Score: " + scoreaAfficher);
         scoreFin.SetText(scoreaAfficher);
     }
 }
