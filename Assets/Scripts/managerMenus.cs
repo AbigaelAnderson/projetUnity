@@ -102,7 +102,6 @@ public class managerMenus : MonoBehaviour
 
     private void son()
     {
-        Debug.Log(sliderSon.value);
         valeurSon.text = sliderSon.value.ToString();
         audioSource.volume = sliderSon.value / 100;
     }

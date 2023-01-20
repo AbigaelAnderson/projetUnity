@@ -1360,6 +1360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656258325}
   - component: {fileID: 656258324}
+  - component: {fileID: 656258326}
   m_Layer: 0
   m_Name: managerMenus
   m_TagString: Untagged
@@ -1411,6 +1412,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656258326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656258323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b2271d348b0a74dbb803c16b15ebf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &759061874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2443,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 77ef5dd12de46a54c803aba48ac77e7f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 14b9b1648d93b9349874dc17915e26ae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
