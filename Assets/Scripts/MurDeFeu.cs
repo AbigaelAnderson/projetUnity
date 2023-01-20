@@ -24,7 +24,7 @@ public class MurDeFeu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.z < positionZArrivee)
+        if(!pauseMenus.Pause && transform.position.z < positionZArrivee)
         {
             Move();
 
