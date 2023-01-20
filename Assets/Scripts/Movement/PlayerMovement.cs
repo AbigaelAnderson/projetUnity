@@ -61,11 +61,11 @@ public class PlayerMovement : MonoBehaviour
         float vert = Input.GetAxis("Vertical");
         if (hori != 0)
         {
-            if (hori < 0)
+            if (hori < 0 && transform.localPosition.x > -8)
             {
                 currentMovement = Vector3.left;
             }
-            else
+            else if (hori > 0 && transform.localPosition.x < 8)
             {
                 currentMovement = Vector3.right;
             }

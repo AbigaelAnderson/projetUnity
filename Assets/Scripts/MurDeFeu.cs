@@ -17,7 +17,7 @@ public class MurDeFeu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        positionZArrivee = 50;
+        positionZArrivee = 47;
         moveVector = Vector3.forward;
     }
 
